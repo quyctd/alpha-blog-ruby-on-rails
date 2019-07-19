@@ -1,0 +1,41 @@
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+$navbar-default-bg: #08088A;
+
+.logo {
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+    float: left;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height:100%;
+    position:relative;
+ }
+
+ body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #efefef;
+    text-align: center;
+}

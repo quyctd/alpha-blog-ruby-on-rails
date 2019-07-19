@@ -1,25 +1,29 @@
 <h1>List article</h1>
 
-<%= link_to "Create new article", new_article_path %>
+<%= link_to "Create new article", new_article_path, class: "btn btn-primary mb-2" %>
 
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Action</th>
-    </tr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
     
-    <% @articles.each do |article| %>
-    <tr>
-        <td><%= article.title %></td>
-        <td><%= article.description %></td>
-        <td>
-            <%= link_to "Edit", edit_article_path(article) %>
-            <%= link_to "Read", article_path(article) %>
-            <%= link_to "Destroy", article_path(article), method: :delete, data: {confirm: "Are you sure"} %>
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td><%= article.title %></td>
+                <td><%= article.description %></td>
+                <td>
+                    <%= link_to "Edit", edit_article_path(article) %> |
+                    <%= link_to "Read", article_path(article) %> |
+                    <%= link_to "Destroy", article_path(article), method: :delete, data: {confirm: "Are you sure"} %>
 
-        </td>
-    </tr>
-    <% end %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
 
 </table>
