@@ -6,6 +6,7 @@
     <thead>
         <tr>
             <th scope="col">Title</th>
+            <th scope="col">Author</th>
             <th scope="col">Description</th>
             <th scope="col">Action</th>
         </tr>
@@ -15,6 +16,7 @@
         <% @articles.each do |article| %>
             <tr>
                 <td><%= article.title %></td>
+                <td><%= article.user.username if article.user %> | Last update: <%= time_ago_in_words(article.updated_at) %> ago | Create at: <%= time_ago_in_words(article.created_at) %> ago</td>
                 <td><%= article.description %></td>
                 <td>
                     <%= link_to "Edit", edit_article_path(article) %> |
