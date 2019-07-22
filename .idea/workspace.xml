@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da899acf-49fc-418e-81df-bd23456ff784" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/alpha-blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alpha-blog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/articles_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/articles_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/article.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/article.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/articles/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/articles/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -46,11 +38,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20190722043915_add_password_digest_to_users.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            <state relative-caret-position="17">
+              <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -99,6 +100,7 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/db/migrate/20190722043915_add_password_digest_to_users.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
       </list>
     </option>
   </component>
@@ -249,29 +251,30 @@
       <workItem from="1563527929687" duration="1446000" />
       <workItem from="1563530938389" duration="1026000" />
       <workItem from="1563757346211" duration="1479000" />
-      <workItem from="1563760542450" duration="2923000" />
+      <workItem from="1563760542450" duration="3295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6906000" />
+    <option name="totallyTimeSpent" value="7278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="988" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19210246" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19210246" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3293979" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3293979" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32821724" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.46280992" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -284,7 +287,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/alpha_blog@alpha_blog.rcov" NAME="alpha-blog Coverage Results" MODIFIED="1563769631557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="alpha-blog" />
+    <SUITE FILE_PATH="coverage/alpha_blog@alpha_blog.rcov" NAME="alpha-blog Coverage Results" MODIFIED="1563771508170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="alpha-blog" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/2.6.0/rexml/functions.rb">
@@ -362,8 +365,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20190722043915_add_password_digest_to_users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        <state relative-caret-position="17">
+          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
         </state>
       </provider>
     </entry>
