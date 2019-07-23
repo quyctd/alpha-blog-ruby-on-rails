@@ -2,6 +2,7 @@
 
 <%= link_to "Create new article", new_article_path, class: "btn btn-primary mb-2" %>
 
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -29,3 +30,7 @@
     </tbody>
 
 </table>
+
+<div class="text-center">
+  <%= will_paginate %>
+</div>

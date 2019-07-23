@@ -9,9 +9,10 @@
     <h2>Email:</h2>
     <p class="lead"><%= @user.email %>
     <h2>List articles: </h2>
-    <% @user.articles.each do |article| %>
+    <% @user_articles.each do |article| %>
       <%= link_to article.title, article_path(article) %>
     <% end %>
+    <%= will_paginate @user_articles %>
     <hr>
     <%= link_to "Edit account", edit_user_path(@user), class: "btn btn-primary btn-sm" %>
     <%= link_to "View all users", users_path, class: "btn btn-success btn-sm" %>

@@ -65,3 +65,7 @@ gem 'rubocop'
 gem 'ruby-debug-ide'
 # Config for debugging in VSCode
 gem 'rspec', '~> 3.8.0'
+
+#using for pagination
+gem 'will_paginate', '3.1.7'
+gem 'will_paginate-bootstrap4'
