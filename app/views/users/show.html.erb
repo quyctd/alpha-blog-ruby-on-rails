@@ -1,0 +1,19 @@
+
+<h1 class="text-center"><%= @user.username %> </h1>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="text-center">
+      <%= gravatar_for @user %>
+    </div>
+    <h2>Email:</h2>
+    <p class="lead"><%= @user.email %>
+    <h2>List articles: </h2>
+    <% @user.articles.each do |article| %>
+      <%= link_to article.title, article_path(article) %>
+    <% end %>
+    <hr>
+    <%= link_to "Edit account", edit_user_path(@user), class: "btn btn-primary btn-sm" %>
+    <%= link_to "View all users", users_path, class: "btn btn-success btn-sm" %>
+  </div>
+</div>

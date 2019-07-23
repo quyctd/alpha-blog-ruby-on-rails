@@ -1,0 +1,23 @@
+
+<%= render 'shared/errors', obj: @user %>
+
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.label :username, for: "username" %>
+    <%= f.text_field :username, class: "form-control", placeholder: "Enter username", id: "username" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, for: "email" %>
+    <%= f.text_field :email, class: "form-control", placeholder: "Enter email", id: "email" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, for: "password" %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Enter password", id: "password" %>
+  </div>
+
+  <%= f.submit( @user.new_record? ? "Sign up" : "Update your account", class: "btn btn-primary mb-2") %>
+<% end %>
+
+<div>
+  <%= link_to "[Cancel request and back to articles listing]", articles_path, class: "text-center" %>
+</div>
