@@ -14,7 +14,9 @@
     <% end %>
     <%= will_paginate @user_articles %>
     <hr>
-    <%= link_to "Edit account", edit_user_path(@user), class: "btn btn-primary btn-sm" %>
+    <% if logged_in? and current_user == @user %>
+      <%= link_to "Edit account", edit_user_path(@user), class: "btn btn-primary btn-sm" %>
+    <% end %>
     <%= link_to "View all users", users_path, class: "btn btn-success btn-sm" %>
   </div>
 </div>
