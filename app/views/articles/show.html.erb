@@ -3,6 +3,11 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
+    <h2>Author: </h2>
+    <div class="text-center">
+      <%= gravatar_for @article.user %>
+      <p class="head"><%= @article.user.username %></p>
+    </div>
     <h2>Description:</h2>
     <p class="lead"><%= @article.description %></p>
     <hr>
