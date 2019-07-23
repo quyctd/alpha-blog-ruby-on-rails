@@ -21,7 +21,7 @@
                 <td><%= article.description %></td>
                 <td>
                   <%= link_to "Read", article_path(article) %>
-                  <% if logged_in? and current_user == article.user %>
+                  <% if logged_in? and (current_user == article.user or current_user.is_admin?) %>
                     |
                     <%= link_to "Edit", edit_article_path(article) %> |
                     <%= link_to "Destroy", article_path(article), method: :delete, data: {confirm: "Are you sure"} %>

@@ -14,8 +14,11 @@
     <% end %>
     <%= will_paginate @user_articles %>
     <hr>
-    <% if logged_in? and current_user == @user %>
+    <% if logged_in? and (current_user == @user or current_user.is_admin?) %>
       <%= link_to "Edit account", edit_user_path(@user), class: "btn btn-primary btn-sm" %>
+    <% end %>
+    <% if logged_in? and current_user.is_admin? and !@user.is_admin? %>
+      <%= link_to "Delete account", user_path(@user), method: :delete, class: "btn btn-primary btn-sm" %>
     <% end %>
     <%= link_to "View all users", users_path, class: "btn btn-success btn-sm" %>
   </div>
