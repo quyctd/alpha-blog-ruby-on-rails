@@ -69,3 +69,6 @@ gem 'rspec', '~> 3.8.0'
 #using for pagination
 gem 'will_paginate', '3.1.7'
 gem 'will_paginate-bootstrap4'
+
+# testing using assert_template
+gem 'rails-controller-testing'

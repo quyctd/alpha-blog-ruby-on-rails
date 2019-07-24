@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   resources :users, expect: [:new]
 
+  resources :categories, except: [:destroy]
+
 end
