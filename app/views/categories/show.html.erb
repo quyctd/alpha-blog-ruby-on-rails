@@ -1,0 +1,39 @@
+<h1>Category: <%= @category.name %></h1>
+
+<% if logged_in? and current_user.is_admin? %>
+  <%= link_to "Edit category name", edit_category_path, class: "btn btn-primary mb-3" %>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Author</th>
+    <th scope="col">Description</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @category_articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.user.username if article.user %> | Last update: <%= time_ago_in_words(article.updated_at) %> ago | Create at: <%= time_ago_in_words(article.created_at) %> ago</td>
+      <td><%= article.description %></td>
+      <td>
+        <%= link_to "Read", article_path(article) %>
+        <% if logged_in? and (current_user == article.user or current_user.is_admin?) %>
+          |
+          <%= link_to "Edit", edit_article_path(article) %> |
+          <%= link_to "Destroy", article_path(article), method: :delete, data: {confirm: "Are you sure"} %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+
+<div class="text-center">
+  <%= will_paginate @category_articles %>
+</div>

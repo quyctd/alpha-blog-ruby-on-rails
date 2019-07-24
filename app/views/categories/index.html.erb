@@ -1,10 +1,14 @@
 <h1 class="text-center">Listing all categories</h1>
 
-<%= link_to "Create new category", new_category_path, class: "btn btn-primary mb-3" %>
+<% if logged_in? and current_user.is_admin? %>
+  <%= link_to "Create new category", new_category_path, class: "btn btn-primary mb-3" %>
+<% end %>
 
 <% @categories.each do |category| %>
   <div class="alert alert-secondary" role="alert">
     <%= link_to category.name, category_path(category), class: "text-dark" %>
+    <br>
+    <small><%= pluralize(category.articles.count, "article") %></small>
   </div>
 <% end %>
 <%= will_paginate %>
