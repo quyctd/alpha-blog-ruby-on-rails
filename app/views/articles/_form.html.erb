@@ -9,8 +9,17 @@
         <%= f.label :description, for: "description" %>
         <%= f.text_area :description, class: "form-control", placeholder: "Enter description", id: "description", rows: "5" %>
     </div>
-
-    <%= f.submit :submit, class: "btn btn-primary mb-2" %>
+    <div class="form-group">
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+        <div class="form-check form-check-inline">
+          <%= cb.check_box(class: 'form-check-input') %>
+          <%= cb.label(class: "form-check-label input_checkbox")  %>
+        </div>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= f.submit :submit, class: "btn btn-primary mb-2" %>
+    </div>
 <% end %>
 
 <div>
