@@ -14,7 +14,9 @@ gem 'pg', group: :production
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 # Bootstrap libraries
-gem 'bootstrap-sass', '~> 3.4.1'
+# bootstrap 4
+gem 'sprockets-rails', '>= 2.3.2'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5'
 gem 'sassc-rails', '>= 2.1.0'
@@ -74,8 +76,5 @@ gem 'will_paginate-bootstrap4'
 # testing using assert_template
 gem 'rails-controller-testing'
 
-# bootstrap 4
-gem 'sprockets-rails', '>= 2.3.2'
-gem 'bootstrap', '~> 4.3.1'
 
 
