@@ -13,7 +13,9 @@
 
   <body>
     <%= render 'layouts/navigation' %>
-    <%= render 'layouts/cover' %>
+    <%= render 'layouts/cover_home' if request.path == root_path %>
+    <%= render 'layouts/cover_single' if request.path != root_path %>
+
     <div class="container mt-4">
       <%= render 'layouts/messages' %>
       <%= yield %>
