@@ -3,6 +3,7 @@
 
 $navbar-default-bg: #08088A;
 
+
 .logo {
     font-size: 1.7em;
     color: #fff;
@@ -15,6 +16,7 @@ $navbar-default-bg: #08088A;
 html {
     height: 100%;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -38,4 +40,15 @@ footer {
     left: 0;
     background-color: #efefef;
     text-align: center;
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  line-height: 1.25em;
+}
+
+.bg-transparent {
+  background-color: transparent!important;
 }
