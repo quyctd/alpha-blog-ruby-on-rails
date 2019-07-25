@@ -1,8 +1,4 @@
-<h1 class="text-center">Listing all categories</h1>
-
-<% if logged_in? and current_user.is_admin? %>
-  <%= link_to "Create new category", new_category_path, class: "btn btn-primary mb-3" %>
-<% end %>
+<%= render 'shared/card_name', card_name: "List all categories" %>
 
 <% @categories.each do |category| %>
   <div class="alert alert-secondary" role="alert">
@@ -12,3 +8,20 @@
   </div>
 <% end %>
 <%= will_paginate %>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="tag-card" style="height: 133px;">
+      <a href="/tag/nature/">
+        <div class="feature-image" style="background-image:url(http://avant.gbjsolution.com/content/images/2018/04/marivi-pazos-229894-unsplash.jpg);">
+          <div class="overlay">
+            <div class="name">Nature</div>
+            <div class="meta-info">
+              <span class="post-count"><i class="material-icons"></i>3 posts</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
