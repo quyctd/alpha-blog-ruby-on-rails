@@ -18,7 +18,3 @@ require("channels")
 // Bootstrap JS
 import 'bootstrap'
 import './src/application.scss'
-
-/*
- *= require ./flatpicker
- */

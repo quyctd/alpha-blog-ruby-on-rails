@@ -73,3 +73,9 @@ gem 'will_paginate-bootstrap4'
 
 # testing using assert_template
 gem 'rails-controller-testing'
+
+# bootstrap 4
+gem 'sprockets-rails', '>= 2.3.2'
+gem 'bootstrap', '~> 4.3.1'
+
+
