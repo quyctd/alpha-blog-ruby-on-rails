@@ -2,11 +2,12 @@ console.log("custom js file loaded");
 
 $(window).scroll(function () {
     if ($(window).scrollTop() >= 30) {
-        $('nav').addClass('navbar-light bg-light');
-        $('nav').removeClass('navbar-dark bg-transparent');
+        $('.navbar').addClass('navbar-light bg-light shadow');
+        $('.navbar').removeClass('navbar-dark bg-transparent');
     } else {
-        $('nav').removeClass('navbar-light bg-light');
-        $('nav').addClass('navbar-dark bg-transparent');
+        $('.navbar').removeClass('navbar-light bg-light shadow');
+        $('.navbar').addClass('navbar-dark bg-transparent');
     }
 });
 
+a

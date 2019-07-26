@@ -1,23 +1,29 @@
 
 <%= render 'shared/errors', obj: @user %>
 
-<%= form_for @user do |f| %>
-  <div class="form-group">
-    <%= f.label :username, for: "username" %>
-    <%= f.text_field :username, class: "form-control", placeholder: "Enter username", id: "username" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :email, for: "email" %>
-    <%= f.text_field :email, class: "form-control", placeholder: "Enter email", id: "email" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password, for: "password" %>
-    <%= f.password_field :password, class: "form-control", placeholder: "Enter password", id: "password" %>
-  </div>
+<div class="justify-content-center">
+  <div class="container-login">
+    <div class="wrap-register pd-t-50 pd-b-90 pd-x-20">
+      <%= form_for(@user, html:{class: "d-flex justify-content-between flex-wrap"}) do |f| %>
+        <h1 class="login-title pd-b-50 text-primary"><%= title %></h1>
 
-  <%= f.submit( @user.new_record? ? "Sign up" : "Update your account", class: "btn btn-primary mb-2") %>
-<% end %>
+        <div class="wrap-input m-bt-16 form-group">
+          <%= f.text_field :username, class: "form-control custom-input", placeholder: "Username", id: "username" %>
+        </div>
+        <div class="wrap-input m-bt-16 form-group">
+          <%= f.text_field :email, class: "form-control custom-input", placeholder: "Email", id: "email" %>
+        </div>
+        <div class="wrap-input m-bt-16 form-group">
+          <%= f.password_field :password, class: "form-control custom-input", placeholder: "Password", id: "password" %>
+        </div>
 
-<div>
-  <%= link_to "[Cancel request and back to articles listing]", articles_path, class: "text-center" %>
+        <div class="w-100 d-flex flex-wrap m-t-17">
+          <%= f.submit( @user.new_record? ? "Sign up" : "Update your account", class: "btn btn-primary login-form-btn") %>
+        </div>
+      <% end %>
+      <% if @user.new_record? %>
+        <p class="w-100 text-center pt-3 login-text">Already registered?  <%= link_to "Login", login_path %></p>
+      <% end %>
+    </div>
+  </div>
 </div>

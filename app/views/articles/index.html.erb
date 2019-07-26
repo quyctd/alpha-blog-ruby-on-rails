@@ -1,39 +1,52 @@
-<%= render 'shared/card_name', card_name: "List all articles" %>
+<%= render 'shared/card_name', card_name: "List all articles" if request.path != root_path %>
 
+<div class="container">
+  <div class="row">
+    <% @articles.each do |article| %>
 
-<%= link_to "Create new article", new_article_path, class: "btn btn-primary mb-2" %>
+      <div class="col-md-4">
+        <article class="card post-wrap post tag-nature tag-lifestyle featured">
+          <div class="card-header">
+            <a href="/articles/<%= article.id %>" >
+              <div class="featured-image-container" style="background-image: url(https://www.vernbuchanan.com/wp-content/uploads/2015/10/default-featured-image-340x300.jpg);">
+              </div>
+            </a>
+            <div class="author">
+              <a href="/users/<%= article.user.id %>">
+                <span class='name'> <%= article.user.username %></span>
+              </a>
+            </div>
+          </div>
+          <div class="content">
+            <h2 class="h4 title">
+              <%= link_to article.title, article_path(article) %>
+            </h2>
+            <div class="meta">
+              <span class="date"><i class="far fa-clock"></i><%= article.created_at.strftime('%d-%m-%Y') %></span>
+  <!--            <span class="Comment"><i class="material-icons"></i><a href="/benefits-of-rose/#disqus_thread">1 Comment</a></span>-->
+              <span class="tag-list">
+                <% if article.categories.length != 0 %>
+                  <i class="far fa-folder-open"></i>
+                <% end %>
 
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Description</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <% @articles.each do |article| %>
-            <tr>
-                <td><%= article.title %></td>
-                <td><%= article.user.username if article.user %> | Last update: <%= time_ago_in_words(article.updated_at) %> ago | Create at: <%= time_ago_in_words(article.created_at) %> ago</td>
-                <td><%= article.description %></td>
-                <td>
-                  <%= link_to "Read", article_path(article) %>
-                  <% if logged_in? and (current_user == article.user or current_user.is_admin?) %>
-                    |
-                    <%= link_to "Edit", edit_article_path(article) %> |
-                    <%= link_to "Destroy", article_path(article), method: :delete, data: {confirm: "Are you sure"} %>
+                <% article.categories.each do |cate| %>
+                  <%= cate.name %>
+                  <% if cate != article.categories.last %>
+                    ,
                   <% end %>
-                </td>
-            </tr>
-        <% end %>
-    </tbody>
+                <% end %>
 
-</table>
-
-<div class="text-center">
-  <%= will_paginate %>
+              </span>
+            </div>
+            <div class="post-entry">
+              <%= article.description %>
+            </div>
+          </div>
+          <div class="card-footer">
+            <%= link_to raw('Read More <i class="fas fa-arrow-right"></i>'), article_path(article), class: "parmalink ripple" %>
+          </div>
+        </article>
+      </div>
+    <% end %>
+  </div>
 </div>
