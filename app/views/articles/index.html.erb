@@ -1,6 +1,6 @@
-<%= render 'shared/card_name', card_name: "List all articles" if request.path != root_path %>
+<%= render 'shared/card_name', card_name: "List articles" if request.path != root_path %>
 
-<% if logged_in? %>
+<% if logged_in? and request.path != root_path %>
   <div class="row">
     <div class="col-md-2">
       <div class="card card-single">
@@ -14,49 +14,7 @@
   <div class="row">
     <% @articles.each do |article| %>
 
-      <div class="col-md-4">
-        <article class="card post-wrap post tag-nature tag-lifestyle featured">
-          <div class="card-header">
-            <a href="/articles/<%= article.id %>" >
-              <div class="featured-image-container" style="background-image: url(https://www.vernbuchanan.com/wp-content/uploads/2015/10/default-featured-image-340x300.jpg);">
-              </div>
-            </a>
-            <div class="author">
-              <a href="/users/<%= article.user.id %>">
-                <span class='name'> <%= article.user.username %></span>
-              </a>
-            </div>
-          </div>
-          <div class="content">
-            <h2 class="h4 title">
-              <%= link_to article.title, article_path(article) %>
-            </h2>
-            <div class="meta">
-              <span class="date"><i class="far fa-clock"></i><%= article.created_at.strftime('%d-%m-%Y') %></span>
-  <!--            <span class="Comment"><i class="material-icons"></i><a href="/benefits-of-rose/#disqus_thread">1 Comment</a></span>-->
-              <span class="tag-list">
-                <% if article.categories.length != 0 %>
-                  <i class="far fa-folder-open"></i>
-                <% end %>
-
-                <% article.categories.each do |cate| %>
-                  <%= cate.name %>
-                  <% if cate != article.categories.last %>
-                    ,
-                  <% end %>
-                <% end %>
-
-              </span>
-            </div>
-            <div class="post-entry">
-              <%= article.description %>
-            </div>
-          </div>
-          <div class="card-footer">
-            <%= link_to raw('Read More <i class="fas fa-arrow-right"></i>'), article_path(article), class: "parmalink ripple" %>
-          </div>
-        </article>
-      </div>
+      <%= render 'article_card', article: article %>
     <% end %>
   </div>
 </div>
