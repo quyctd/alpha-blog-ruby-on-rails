@@ -1,6 +1,6 @@
-<%= render 'shared/card_name', card_name: "List all articles" if request.path != root_path %>
+<%= render 'shared/card_name', card_name: "List articles" if request.path != root_path %>
 
-<% if logged_in? %>
+<% if logged_in? and request.path != root_path %>
   <div class="row">
     <div class="col-md-2">
       <div class="card card-single">
