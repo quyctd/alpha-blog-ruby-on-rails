@@ -3,8 +3,8 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: %i[edit update show]
-  before_action :require_user, only: %i[edit update show]
-  before_action :require_same_user, only: %i[edit update show]
+  before_action :require_user, only: %i[edit update]
+  before_action :require_same_user, only: %i[edit update]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 1)
@@ -63,6 +63,7 @@ class UsersController < ApplicationController
   def require_same_user
     if current_user != @user && !current_user.is_admin?
       flash[:danger] = "You can edit when you are not #{@user.username}"
+      redirect_to users_path
     end
   end
 
