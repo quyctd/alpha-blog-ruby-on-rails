@@ -2,6 +2,9 @@
 
 $navbar-default-bg: #08088A;
 
+nav a {
+  font-weight: bold;
+}
 
 .logo {
     font-size: 1.7em;
@@ -29,6 +32,7 @@ html {
     padding-bottom: 6rem;
     min-height: 100%;
     font-family: "Helvetica Neue", Arial, sans-serif;
+   background-color: #f7f8fa;
   }
   
 
@@ -50,4 +54,230 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .bg-transparent {
   background-color: transparent!important;
+}
+
+.dropdown-menu {
+  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 12px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 12px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25), 0 3px 3px -2px rgba(0, 0, 0, 0.25), 0 1px 12px 0 rgba(0, 0, 0, 0.25);
+  border: 10px;
+  padding: 20px 5px;
+  background-color: #f7f8fa;
+}
+
+.dropdown-item {
+  font-weight: 500;
+  padding: 1rem 1rem;
+  line-height: 1em;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #5f6368;
+}
+
+.dropdown-item:hover {
+  background-color: #e3e3e3;
+  color: black;
+}
+
+.card .card-header {
+  position: relative;
+  margin-bottom: 35px;
+  padding: 0;
+}
+
+.card .card-header .featured-image-container {
+  background-color: #ff5722;
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card .card-header .author {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 21px 28px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.6)), color-stop(1, rgba(0, 0, 0, 0)));
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  background: -moz-linear-gradient(center top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(0, 0, 0, 0)', endColorstr='rgba(0, 0, 0, 0.6)');
+}
+
+.card .card-header .author a .avatar {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  padding: 2px;
+  background: #ffffff;
+}
+
+.card .card-header .author a .name {
+  color: #ffffff;
+  margin-left: 2px;
+}
+
+.card .content {
+  padding: 0px 28px 35px;
+}
+
+.card .title {
+  margin-top: 2px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card .meta {
+  font-size: 13px;
+  line-height: 24px;
+  color: #909090;
+  letter-spacing: 0.25px;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.card .title a {
+  color: #464646;
+}
+
+.card .meta a {
+  color: #909090;
+}
+
+.card a:hover, .tag-card a:hover {
+  text-decoration: none;
+}
+
+.card .meta span {
+  margin-right: 14px;
+  display: inline-block;
+}
+
+.card .meta i {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-right: 2px;
+  margin-top: -2px;
+}
+
+.card .post-entry {
+  height: 110px;
+  overflow: hidden;
+}
+
+.card .card-footer {
+  border-top: 1px solid #e6e6e6;
+  padding-left: 28px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+}
+
+.card .card-footer .parmalink {
+  text-transform: uppercase;
+  color: #393939;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 42px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card .card-footer .share-wrap {
+  border-left: 1px solid #e6e6e6;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.card .card-footer .share-wrap .share-link-wrap {
+  position: absolute;
+  bottom: 100%;
+  right: 5px;
+  margin-bottom: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: #ffffff;
+  -webkit-border-radius: 2px 2px 0px 2px;
+  -moz-border-radius: 2px 2px 0px 2px;
+  border-radius: 2px 2px 0px 2px;
+  box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 3px -2px rgba(0, 0, 0, 0.2), 0 0px 7px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+  transform-origin: 100% 100%;
+}
+
+.author-card, .tag-card {
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 28px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 2px 0px -2px rgba(0, 0, 0, 0.2), 0 0px 2px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 2px 0px -2px rgba(0, 0, 0, 0.2), 0 0px 2px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 2px 0px -2px rgba(0, 0, 0, 0.2), 0 0px 2px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: box-shadow 0.25s;
+  -moz-transition: box-shadow 0.25s;
+  -ms-transition: box-shadow 0.25s;
+  -o-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+}
+
+.tag-card {
+  padding: 0px;
+  text-align: center;
+}
+
+.tag-card .feature-image {
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  height: 100%;
+}
+
+.tag-card .feature-image .overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 28px;
+  height: 100%;
+}
+
+.tag-card .feature-image .name {
+  color: #ffffff;
+  font-size: 24px;
+  margin-top: 14px;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.tag-card .feature-image .meta-info {
+  margin-top: 7px;
+}
+
+.tag-card .feature-image .meta-info span {
+  font-size: 14px;
+  margin-right: 14px;
+  color: #ffffff;
+}
+
+.tag-card .feature-image:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
 }

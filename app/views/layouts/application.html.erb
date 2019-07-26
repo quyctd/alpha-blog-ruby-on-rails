@@ -6,13 +6,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'navbar' %>
     <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous" />
   </head>
 
   <body>
     <%= render 'layouts/navigation' %>
-    <%= render 'layouts/cover' %>
+    <%= render 'layouts/cover_home' if request.path == root_path %>
+    <%= render 'layouts/cover_single' if request.path != root_path %>
+
     <div class="container mt-4">
       <%= render 'layouts/messages' %>
       <%= yield %>
