@@ -11,6 +11,9 @@ class UsersController < ApplicationController
   end
 
   def new
+    if logged_in? && !current_user.is_admin?
+      redirect_to root_path
+    end
     @user = User.new
   end
 

@@ -18,10 +18,10 @@
         </div>
 
         <div class="w-100 d-flex flex-wrap m-t-17">
-          <%= f.submit( @user.new_record? ? "Sign up" : "Update your account", class: "btn btn-primary login-form-btn") %>
+          <%= f.submit( @user.new_record? ? title : "Update your account", class: "btn btn-primary login-form-btn") %>
         </div>
       <% end %>
-      <% if @user.new_record? %>
+      <% if @user.new_record? and !(logged_in? and current_user.is_admin?) %>
         <p class="w-100 text-center pt-3 login-text">Already registered?  <%= link_to "Login", login_path %></p>
       <% end %>
     </div>

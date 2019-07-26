@@ -3,7 +3,12 @@
 # Session controller
 class SessionsController < ApplicationController
 
-  def new; end
+  def new
+    if logged_in?
+      flash[:danger] = "You already logged in!"
+      redirect_to root_path
+    end
+  end
 
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
