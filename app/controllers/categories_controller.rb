@@ -54,7 +54,6 @@ class CategoriesController < ApplicationController
       ret[:image_name]  = params[:category][:image_data].original_filename
       ret[:mime_type]   = params[:category][:image_data].content_type
     end
-    puts ret
     ret
   end
 
