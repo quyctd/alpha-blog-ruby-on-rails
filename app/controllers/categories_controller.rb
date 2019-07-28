@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :require_admin, except: %i[index show serve]
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order('created_at DESC')
   end
 
   def new
