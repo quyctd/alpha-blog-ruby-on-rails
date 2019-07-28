@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :users, expect: [:new]
 
-  resources :categories, except: [:destroy]
+  resources :categories, except: [:destroy] do
+    get 'serve', on: :member
+  end
 
 end
