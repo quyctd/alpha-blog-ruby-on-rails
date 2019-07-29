@@ -5,7 +5,7 @@
     <div class="col-md-4">
       <div class="tag-card" style="height: 133px;">
         <a href="/categories/<%= category.id %>">
-          <div class="feature-image" style="background-image:url(http://avant.gbjsolution.com/content/images/2018/04/marivi-pazos-229894-unsplash.jpg);">
+          <div class="feature-image" style="background-image:url(<%= serve_category_path(category) %>);">
             <div class="overlay">
               <div class="name"><%= category.name.capitalize %></div>
               <div class="meta-info">

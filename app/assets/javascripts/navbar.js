@@ -9,5 +9,3 @@ $(window).scroll(function () {
         $('.navbar').addClass('navbar-dark bg-transparent');
     }
 });
-
-a

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root 'articles#index', page: 'home'
   get 'about', to: 'pages#about'
 
-  resources :articles
+  resources :articles do
+    get 'serve', on: :member
+  end
 
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :users, expect: [:new]
 
-  resources :categories, except: [:destroy]
+  resources :categories, except: [:destroy] do
+    get 'serve', on: :member
+  end
 
 end

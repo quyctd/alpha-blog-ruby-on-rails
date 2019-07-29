@@ -4,6 +4,12 @@
 <div class="justify-content-center">
     <div class="wrap-form pd-t-50 pb-5 pd-x-20">
       <%= form_for @article do |f| %>
+
+        <%= f.label :image_data, for: "image_data" %>
+        <div class="file-upload-wrapper" data-text="Select your file!">
+          <%= f.file_field :image_data, class: "file-upload-field", :onchange => "doSomeThing()" %>
+        </div>
+
         <div class="form-group">
             <%= f.label :title, for: "title" %>
             <%= f.text_field :title, class: "form-control", placeholder: "Enter title", id: "title" %>

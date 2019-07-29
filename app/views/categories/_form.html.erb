@@ -1,22 +1,16 @@
 <%= render 'shared/errors', obj: @category %>
 
-
 <div class="justify-content-center">
   <div class="wrap-form pd-t-50 pb-5 pd-x-20">
     <%= form_for @category do |f| %>
-      <p><%= f.label :feature_image, for: "feature_image" %></p>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-        </div>
-        <div class="custom-file">
-          <%= f.file_field :feature_image, class: "custom-file-input", id: "inputGroupFile01", 'aria-describedby': "inputGroupFileAddon01" %>
-          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-        </div>
+      <%= f.label :image_data, for: "image_data" %>
+      <div class="file-upload-wrapper" data-text="Select your file!">
+        <%= f.file_field :image_data, class: "file-upload-field", :onchange => "doSomeThing()" %>
       </div>
+      <p class="font-italic text-secondary mt-2">Current image url: <%= @category.image_name %></p>
 
-      <div class="form-group">
+      <div class="form-group mt-3">
         <%= f.label :name, for: "username" %>
         <%= f.text_field :name, class: "form-control", placeholder: "Enter category name", required: true %>
       </div>
