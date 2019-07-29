@@ -76,5 +76,7 @@ gem 'will_paginate-bootstrap4'
 # testing using assert_template
 gem 'rails-controller-testing'
 
+# cloudinary
+gem 'cloudinary'
 
 
