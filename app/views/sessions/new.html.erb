@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "layouts/login" %>
+
+<div class="justify-content-center">
+  <div class="container-login">
+    <div class="wrap-login pd-t-50 pd-b-90 pd-x-20">
+      <%= form_for( :session, url: login_path, html:{class: "d-flex justify-content-between flex-wrap"} ) do |f| %>
+        <h1 class="login-title pd-b-50 text-primary">login</h1>
+
+        <div class="wrap-input m-bt-16 form-group">
+          <%= f.email_field :email, class: "form-control custom-input", placeholder: "Email", id: "email", autofocus: true %>
+        </div>
+        <div class="wrap-input m-bt-16 form-group">
+          <%= f.password_field :password, class: "form-control custom-input", placeholder: "Password", id: "password", autocomplete: "off" %>
+        </div>
+
+        <div class="w-100 d-flex flex-wrap m-t-17">
+          <%= f.submit "Login", class: "btn btn-primary login-form-btn mb-2" %>
+        </div>
+        <p class="w-100 text-center pt-3 register-text">Not registered? <%= link_to "Create an account", signup_path %></p>
+      <% end %>
+    </div>
+  </div>
+
+</div>

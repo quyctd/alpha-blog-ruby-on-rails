@@ -1,0 +1,20 @@
+<%= render 'shared/card_name', card_name: "List categories" %>
+
+<div class="row">
+  <% @categories.each do |category| %>
+    <div class="col-md-4">
+      <div class="tag-card" style="height: 133px;">
+        <a href="/categories/<%= category.id %>">
+          <div class="feature-image" style="background-image:url(http://avant.gbjsolution.com/content/images/2018/04/marivi-pazos-229894-unsplash.jpg);">
+            <div class="overlay">
+              <div class="name"><%= category.name.capitalize %></div>
+              <div class="meta-info">
+                <span class="post-count"><i class="far fa-newspaper"></i> <%= pluralize(category.articles.count, "article") %></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>

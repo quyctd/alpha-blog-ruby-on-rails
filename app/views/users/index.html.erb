@@ -1,0 +1,48 @@
+<%= render 'shared/card_name', card_name: "List all users" %>
+
+<% if logged_in? and current_user.is_admin? %>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="card card-single">
+        <%= link_to "Add new User", new_user_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Username</th>
+    <th scope="col">Email</th>
+    <th scope="col">Articles</th>
+    <% if logged_in? and current_user.is_admin? %>
+      <th scope="col">Actions</th>
+    <% end %>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.username, user_path(user) %></td>
+      <td><%= user.email %></td>
+      <td><%= pluralize(user.articles.count, "articles") if user.articles %></td>
+      <% if logged_in? and current_user.is_admin? %>
+        <td>
+          <%= link_to "View", user_path(user) %> | <%= link_to "Edit", edit_user_path(user) %>
+          <% unless user.is_admin? %>
+            |
+            <%=  link_to "Delete", user_path(user), method: :delete, :confirm => "Are you sure" %>
+          <% end %>
+          </td>
+        <%  end %>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+
+<div class="text-center">
+  <%= will_paginate %>
+</div>

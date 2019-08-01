@@ -1,0 +1,44 @@
+<%= render 'shared/card_name', card_name: "User info" %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-single px-5 pt-3">
+      <p>Username: <i><%= @user.username %></i> </p>
+      <p>Email: <i><%= @user.email %></i> </p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <% if logged_in? and (current_user == @user or current_user.is_admin?) %>
+      <div class="col-md-2">
+        <div class="card card-single">
+          <%= link_to "Edit account", edit_user_path(@user), class: "btn btn-primary btn-sm" %>
+        </div>
+    </div>
+
+    <% if current_user != @user && current_user.is_admin? && !@user.is_admin? %>
+      <div class="col-md-2">
+        <div class="card card-single">
+          <%= link_to "Delete account", user_path(@user), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+
+  <div class="col-md-2">
+    <div class="card card-single">
+      <%= link_to "View all users", users_path, class: "btn btn-success btn-sm" %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+      <% @user_articles.each do |article| %>
+        <%= render 'articles/article_card', article: article %>
+      <% end %>
+      <%= will_paginate @user_articles %>
+  </div>
+</div>

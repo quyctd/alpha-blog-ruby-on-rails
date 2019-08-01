@@ -1,0 +1,30 @@
+.cover {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #ffffff;
+    background-color: #512da8;
+    margin-top: 0;
+}
+
+.cover-home .container {
+    padding-top: 220px;
+    padding-bottom: 140px;
+}
+
+.cover .welcome-message {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 3.75em;
+}
+
+.cover .description {
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin-top: 28px;
+}
+
+.cover-single {
+    padding: 70px 0;
+}

@@ -1,0 +1,145 @@
+.wrap-login {
+    width: 50vh;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+
+.wrap-login {
+    -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 12px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 12px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 12px 0 rgba(0, 0, 0, 0.12);
+}
+
+.container-login {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-title {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.wrap-input {
+    width: 100%;
+    position: relative;
+    border-radius: 3px;
+}
+
+.custom-input {
+    font-weight: bold;
+    color: #403866;
+    line-height: 1.2;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background: transparent;
+    height: 62px;
+    padding: 0 20px 0 38px;
+}
+
+.login-form-btn {
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 62px;
+    border-radius: 3px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.register-text {
+    font-style: italic;
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input {
+    background-color: #fff;
+    color: #fff;
+    border: 0px solid rgba(255, 255, 255, 0.5);
+    height: 50px;
+    padding: 10px 15px;
+    vertical-align: top;
+}
+
+form textarea {
+    background-color: #fff;
+    color: #fff;
+    border: 0px solid rgba(255, 255, 255, 0.5);
+    height: 150px;
+    padding: 10px 15px;
+    margin-bottom: 40px;
+    vertical-align: top;
+}
+
+form input, form textarea {
+    background-position: 97% 15px;
+    /*width: 100%;*/
+}
+
+.padding-none {
+    padding: 0;
+}
+
+.base-background-color {
+    background-color: #f7f8fa;
+}
+
+.pd-t-50 {
+    padding-top: 50px;
+}
+
+.pd-b-90 {
+    padding-bottom: 90px;
+}
+
+.pd-b-50 {
+    padding-bottom: 50px;
+}
+
+.m-bt-16 {
+    margin-bottom: 16px;
+}
+
+.pd-x-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.m-t-17 {
+    margin-top: 17px;
+}

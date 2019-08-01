@@ -1,0 +1,7 @@
+<%= stylesheet_link_tag "layouts/register" %>
+
+<% if logged_in? and current_user.is_admin? %>
+  <%= render 'form', title: "Create new user" %>
+<% else %>
+  <%= render 'form', title: "Register" %>
+<% end %>

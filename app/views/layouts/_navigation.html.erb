@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparent">
+  <%= link_to "Alpha blog", root_path, class: "navbar-brand logo"  %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Articles", articles_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Users", users_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="1">
+          <%= link_to "All categories", categories_path, class: "dropdown-item"  %>
+          <% Category.all.each do |cate| %>
+            <%= link_to cate.name, category_path(cate), class: "dropdown-item"  %>
+          <% end %>
+          <% if logged_in? and current_user.is_admin? %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Create new Category", new_category_path, class: "dropdown-item"  %>
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <%= link_to "About", about_path, class: "nav-link"  %>
+      </li>
+    </ul>
+
+
+    <ul class="navbar-nav">
+      <% unless logged_in? %>
+        <li class="nav-item">
+          <%= link_to "Sign Up", signup_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign In", login_path, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.username if current_user %>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+            <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item"  %>
+            <%= link_to "View profile", user_path(current_user), class: "dropdown-item"  %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Log out", logout_path, class: "text-danger dropdown-item text-secondary"  %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
