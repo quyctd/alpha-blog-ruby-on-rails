@@ -79,4 +79,5 @@ gem 'rails-controller-testing'
 # cloudinary
 gem 'cloudinary'
 
-
+# Authentication devise
+gem 'devise'
