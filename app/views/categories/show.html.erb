@@ -11,9 +11,11 @@
   </div>
 <% end %>
 
-<% @category.articles.each do |article| %>
-  <%= render 'articles/article_card', article: article %>
-<% end %>
+<div class="row">
+  <% @category.articles.each do |article| %>
+    <%= render 'articles/article_card', article: article %>
+  <% end %>
+</div>
 
 <div class="text-center">
   <%= will_paginate @category_articles %>

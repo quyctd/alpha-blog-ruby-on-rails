@@ -2,11 +2,11 @@
 
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update show destroy]
-  before_action :require_user, except: %i[index show]
+  before_action :require_user, except: %i[index show serve]
   before_action :require_same_user, only: %i[edit update destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order("created_at DESC")
   end
 
   def new
@@ -43,6 +43,11 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def serve
+    @article = Article.find(params[:id])
+    send_data(@article.image_data, type: @article.mime_type, filename: "#{@article.image_name}.jpg", disposition: "inline")
+  end
+
   private
 
   def set_article
@@ -50,7 +55,16 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, category_ids: [])
+    ret = {}
+    ret[:title] = params[:article][:title]
+    ret[:description] = params[:article][:description]
+    ret[:category_ids] = params[:article][:category_ids]
+    if params[:article][:image_data]
+      ret[:image_data]  = params[:article][:image_data].read
+      ret[:image_name]  = params[:article][:image_data].original_filename
+      ret[:mime_type]   = params[:article][:image_data].content_type
+    end
+    ret
   end
 
   def require_same_user

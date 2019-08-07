@@ -1,12 +1,18 @@
 <%= render 'shared/errors', obj: @category %>
 
-
 <div class="justify-content-center">
   <div class="wrap-form pd-t-50 pb-5 pd-x-20">
     <%= form_for @category do |f| %>
-      <div class="form-group">
+
+      <%= f.label :image_data, for: "image_data" %>
+      <div class="file-upload-wrapper" data-text="Select your file!">
+        <%= f.file_field :image_data, class: "file-upload-field", :onchange => "doSomeThing()" %>
+      </div>
+      <p class="font-italic text-secondary mt-2">Current image url: <%= @category.image_name %></p>
+
+      <div class="form-group mt-3">
         <%= f.label :name, for: "username" %>
-        <%= f.text_field :name, class: "form-control", placeholder: "Enter category name" %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Enter category name", required: true %>
       </div>
 
       <div class="form-group mt-5">

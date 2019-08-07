@@ -2,8 +2,15 @@
   <article class="card post-wrap post tag-nature tag-lifestyle featured">
     <div class="card-header">
       <a href="/articles/<%= article.id %>" >
-        <div class="featured-image-container" style="background-image: url(https://www.elegantthemes.com/blog/wp-content/uploads/2017/08/featuredimage.jpg);">
-        </div>
+        <% if article.image_data %>
+          <div class="featured-image-container" style="background-image:
+            url(<%= serve_article_path(article) %>">
+          </div>
+        <% else %>
+          <div class="featured-image-container" style="background-image:
+            url(https://www.elegantthemes.com/blog/wp-content/uploads/2017/08/featuredimage.jpg);">
+          </div>
+        <% end %>
       </a>
       <div class="author">
         <a href="/users/<%= article.user.id %>">

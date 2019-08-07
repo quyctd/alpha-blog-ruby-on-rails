@@ -1,9 +1,9 @@
 class CategoriesController < ApplicationController
 
-  before_action :require_admin, except: %i[index show]
+  before_action :require_admin, except: %i[index show serve]
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order('created_at DESC')
   end
 
   def new
@@ -39,10 +39,22 @@ class CategoriesController < ApplicationController
     @category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
   end
 
+  def serve
+    @category = Category.find(params[:id])
+    send_data(@category.image_data, type: @category.mime_type, filename: "#{@category.image_name}.jpg", disposition: "inline")
+  end
+
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    ret = {}
+    ret[:name] = params[:category][:name]
+    if params[:category][:image_data]
+      ret[:image_data]  = params[:category][:image_data].read
+      ret[:image_name]  = params[:category][:image_data].original_filename
+      ret[:mime_type]   = params[:category][:image_data].content_type
+    end
+    ret
   end
 
   def require_admin

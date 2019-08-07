@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_024854) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2019_07_26_094952) do
+=======
+ActiveRecord::Schema.define(version: 2019_07_28_071817) do
+>>>>>>> 7e24e1d3476e6d12a64f547a942fd4601bdb1f2a
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -23,12 +27,22 @@ ActiveRecord::Schema.define(version: 2019_07_24_024854) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
+    t.binary "image_data"
+    t.string "image_name"
+    t.string "mime_type"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
+    t.string "feature_image"
+=======
+    t.binary "image_data"
+    t.string "image_name"
+    t.string "mime_type"
+>>>>>>> 7e24e1d3476e6d12a64f547a942fd4601bdb1f2a
   end
 
   create_table "users", force: :cascade do |t|
