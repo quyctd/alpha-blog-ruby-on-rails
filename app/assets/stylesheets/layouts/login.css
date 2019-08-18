@@ -88,9 +88,6 @@ form label {
 }
 
 form input {
-    background-color: #fff;
-    color: #fff;
-    border: 0px solid rgba(255, 255, 255, 0.5);
     height: 50px;
     padding: 10px 15px;
     vertical-align: top;
