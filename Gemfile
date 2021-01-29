@@ -11,7 +11,7 @@ gem 'rails', '~> 6.0.0.rc1'
 gem 'sqlite3', '~> 1.4', group: :development
 gem 'pg', group: :production
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 # Bootstrap libraries
 # bootstrap 4
